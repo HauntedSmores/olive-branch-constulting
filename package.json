@@ -1,0 +1,20 @@
+{
+  "name": "custom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HauntedSmores/olive-branch-constulting.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HauntedSmores/olive-branch-constulting/issues"
+  },
+  "homepage": "https://github.com/HauntedSmores/olive-branch-constulting#readme"
+}
