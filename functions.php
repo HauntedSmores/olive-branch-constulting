@@ -13,6 +13,9 @@ register_nav_menus( array( 'main-menu' => esc_html__( 'Main Menu', 'blankslate' 
 add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 function blankslate_load_scripts() {
 wp_enqueue_style( 'blankslate-style', get_stylesheet_uri() );
+wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/dist/main.css' );
+wp_enqueue_style( 'google-fonts','https://fonts.googleapis.com/css?family=Rubik|Trirong');
+wp_enqueue_script( 'custom-script', get_template_directory_uri() . '/dist/main.js' );
 wp_enqueue_script( 'jquery' );
 }
 add_action( 'wp_footer', 'blankslate_footer_scripts' );
