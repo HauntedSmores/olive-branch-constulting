@@ -1,4 +1,4 @@
-<header id="header">
+<header class="ob-header">
   <nav id="menu">
     <?php $args = [
       'theme_location' => 'main-menu',
@@ -7,5 +7,5 @@
       ] ?>
 		<?php wp_nav_menu($args); ?>
 	</nav>
-  <img src="<?php echo get_template_directory_uri() . '/images/logo.jpg' ?>" alt="">
+  <!-- <img src="<?php echo get_template_directory_uri() . '/images/logo.jpg' ?>" alt=""> -->
 </header>

@@ -1,0 +1,58 @@
+.ob-header
+  position fixed
+  bottom 0
+  display flex
+  align-items center
+  width 100%
+  height 100px
+  padding-left 24px
+  layer(nav)
+  transition all 300ms
+
+  &--active
+    background-color: $colors.green
+    height 60px
+    
+    li.menu-item
+      &:after
+        background-color: $colors.light
+
+      a
+        color: $colors.grey
+        font-size 22px
+
+  +break(desktop)
+    // background-color: $colors.green
+
+.main-nav
+  &__list
+    display flex
+
+    li
+      position relative
+      margin 0 12px
+
+      &:after
+        content ''
+        position absolute
+        bottom 0
+        left 0
+        width 0
+        height 4px
+        background-color: $colors.green
+
+      &:hover:after
+        width 100%
+        transition width 300ms
+
+
+      a
+        padding 6px
+        color white
+        text-decoration none
+        letter-spacing 1px
+        font-size 32px
+        font-weight 300
+        transition all 200ms
+
+

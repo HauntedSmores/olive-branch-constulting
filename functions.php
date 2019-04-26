@@ -14,7 +14,7 @@ add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 function blankslate_load_scripts() {
 wp_enqueue_style( 'blankslate-style', get_stylesheet_uri() );
 wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/dist/main.css' );
-wp_enqueue_style( 'google-fonts','https://fonts.googleapis.com/css?family=Rubik|Trirong');
+wp_enqueue_style( 'google-fonts','https://fonts.googleapis.com/css?family=Rubik:300,400,700|Trirong:200,300,400,700');
 wp_enqueue_script( 'custom-script', get_template_directory_uri() . '/dist/main.js' );
 wp_enqueue_script( 'jquery' );
 }
@@ -117,3 +117,11 @@ return count( $comments_by_type['comment'] );
 return $count;
 }
 }
+
+add_filter( 'body_class', function( $classes ) {
+  if ( is_page_template() ) {
+    $slug = str_replace( '.php', '', get_page_template_slug());
+    $classes[] = $slug != '' ? $slug . '-template' : null;
+  }
+  return $classes;
+} );
