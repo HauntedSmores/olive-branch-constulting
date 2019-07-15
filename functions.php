@@ -14,7 +14,7 @@ add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 function blankslate_load_scripts() {
 wp_enqueue_style( 'blankslate-style', get_stylesheet_uri() );
 wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/dist/main.css' );
-wp_enqueue_style( 'google-fonts','https://fonts.googleapis.com/css?family=Rubik:300,400,700|Trirong:200,300,400,700');
+wp_enqueue_style( 'google-fonts','https://fonts.googleapis.com/css?family=Lato:400,400i,700|Lustria');
 wp_enqueue_script( 'custom-script', get_template_directory_uri() . '/dist/main.js' );
 wp_enqueue_script( 'jquery' );
 }
@@ -125,3 +125,14 @@ add_filter( 'body_class', function( $classes ) {
   }
   return $classes;
 } );
+
+// ACF Options Page
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings'
+	));
+	
+}

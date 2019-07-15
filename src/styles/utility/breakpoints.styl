@@ -1,8 +1,12 @@
 $breaks = {
-  tablet: 767,
-  desktop: 1023
+  tablet: 767px,
+  desktop: 1023px
 }
 
 break(size)
-  @media (min-width: $breaks[size]px)
+  @media (min-width: $breaks[size])
+    {block}
+
+break-px(size)
+  @media (min-width: size)
     {block}

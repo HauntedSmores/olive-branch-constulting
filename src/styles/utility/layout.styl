@@ -1,12 +1,40 @@
 html
-body
   height 100%
 
 body
-  background-color: $colors.white
   background url('../../images/stardust.png')
-  min-height 200vh
+  padding-bottom 60px
 
 img
   display block
   max-width 100%
+
+container()
+  margin 0 auto
+  padding 0 24px
+  +break(desktop)
+    max-width 1600px
+
+.container
+  container()
+
+.layout--text
+  padding 0 12px
+  margin 0 auto 60px
+  max-width 1024px
+
+  .layout-text-container
+    padding 24px
+    color: $colors.grey
+    background-color: $colors.light_grey
+
+    +break(desktop)
+      padding 24px 48px
+
+  h1
+  h2
+  h3
+  h4
+    color: $colors.grey
+  p
+    color: $colors.grey

@@ -1,0 +1,32 @@
+#footer
+  background-color: darken($colors.grey, 10%)
+  padding 48px 24px
+
+  +break(desktop)
+    display flex
+    justify-content center
+
+  p
+    font-size 18px
+    margin 0
+
+.footer-info
+  margin-right 0
+  +break(desktop)
+    margin-right 48px
+
+.footer-addresses
+  display flex
+  margin-bottom 24px
+  +break(desktop)
+    order 2
+    margin-bottom 0
+
+.footer-address
+  &:first-child
+    margin-right 24px
+
+  h4
+    font-size 16px
+    +break(desktop)
+      font-size 22px

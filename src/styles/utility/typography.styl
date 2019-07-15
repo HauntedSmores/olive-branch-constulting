@@ -1,21 +1,55 @@
+html
+  font-size 16px
+
+  +break(desktop)
+    font-size 22px
+
 h1
 h2
 h3
 h4
-  font-family 'Trirong', serif
+  font-family 'Lustria', serif
+  color: $colors.green
+  line-height 3.75rem
+  &:first-child
+    margin-top 0
+
+p
+  &:first-child
+    margin-top 0
+
+h4
+  font-family 'Lato', sans-serif
+  font-weight bold
+  line-height 1.5
+  text-transform uppercase
+  letter-spacing: 1px
 
 h1
   color: $colors.green
 
 .mega
-  font-size 56px
+  font-size 44px
   line-height: 1.25
+  +break(desktop)
+    font-size 84px
 
-body
+body   
 p
-  font-family 'Rubik', sans-serif
-  line-height 1.25
+  font-family 'Lato', sans-serif
+  line-height 1.5
+  color: $colors.light
 
 a
   display inline-block
-  color: $colors.light-green
+  color: $colors.light_green
+
+ul
+ol
+  padding-left 36px
+
+li
+  margin-bottom 12px
+
+ol
+  list-style decimal

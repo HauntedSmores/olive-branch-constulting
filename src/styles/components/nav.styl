@@ -1,58 +1,114 @@
+.page-template-landing
+  +break(desktop)
+    .ob-header
+      background-color: alpha($colors.light_grey, 40%)
+
 .ob-header
   position fixed
   bottom 0
   display flex
+  justify-content space-between
   align-items center
   width 100%
-  height 100px
-  padding-left 24px
-  layer(nav)
+  height 60px
+  padding-left 12px
+  background-color: $colors.green
   transition all 300ms
+  layer(nav)
 
-  &--active
-    background-color: $colors.green
-    height 60px
-    
-    li.menu-item
-      &:after
-        background-color: $colors.light
-
-      a
-        color: $colors.grey
-        font-size 22px
+  &--open
+    nav#main-menu
+      left 0
 
   +break(desktop)
-    // background-color: $colors.green
+    height 100px
+    background-color: alpha($colors.grey, 85%)
+    padding-left 24px
 
-.main-nav
-  &__list
-    display flex
+    &--active
+      background-color: $colors.green !important
+      height 60px
+      
+      nav#main-menu li
+        &:after
+          background-color: $colors.light
 
-    li
-      position relative
-      margin 0 12px
+        a
+          color: $colors.grey
+          font-size 22px
 
-      &:after
-        content ''
-        position absolute
-        bottom 0
-        left 0
-        width 0
-        height 4px
-        background-color: $colors.green
+  img
+    height 100%
 
-      &:hover:after
-        width 100%
-        transition width 300ms
+.nav-menu-btn
+  width 30px
+  height 30px
 
+  +break(desktop)
+    display none
 
-      a
-        padding 6px
-        color white
-        text-decoration none
-        letter-spacing 1px
-        font-size 32px
-        font-weight 300
-        transition all 200ms
+nav#main-menu
+  position fixed
+  top 0
+  left -400px
+  width 100%
+  max-width 400px
+  height calc(100vh - 60px)
+  background-color: $colors.grey
+  transition left 250ms ease-out
+
+  ul
+    padding 0
+    margin 0
+
+    a
+      // background-color: $colors.honey_dew
+      border-bottom: 1px solid alpha($colors.light_grey, 0.3)
+      display block
+      padding 12px
+      text-decoration none
+      font-size 18px
+      font-weight bold
+      letter-spacing 1.5px
+      text-transform uppercase
+      color: $colors.honey_dew
+
+  
+  +break(desktop)
+    position static
+    height auto
+    background-color transparent
+
+    ul
+      display flex
+
+      li
+        position relative
+        margin 0 12px
+
+        &:after
+          content ''
+          position absolute
+          bottom -4px
+          left 0
+          width 0
+          height 4px
+          background-color: $colors.green
+
+        &:hover:after
+          width 100%
+          transition width 300ms
+
+        a
+          display inline
+          padding 6px
+          color white
+          text-decoration none
+          text-transform none
+          letter-spacing 1px
+          font-size 32px
+          font-weight 300
+          border none
+          transition all 200ms
 
 

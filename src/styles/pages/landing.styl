@@ -1,22 +1,49 @@
 .landing-hero
   position relative
-  height 100vh
+  margin-bottom 60px
 
-  &:after
+  +break(desktop)
+    height 100vh
+    margin-bottom 108px
+
+  &:before
+    content ''
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background-color alpha(#000,0.15)
+    z-index 1
 
 
   &__image
+    position absolute
+    top 0
+    left 0
     width 100%
     height 100%
     object-fit cover
+    z-index 0
+
+    +break(desktop)
+      position relative
+
 
   &__content
-    position absolute
-    top 50%
-    right 10%
-    width 500px
+    position relative
+    width 100%
     color: $colors.light
-    transform translateY(-50%)
+    padding 60px 24px
+    z-index 2
+
+    +break(desktop)
+      position absolute
+      width 500px
+      top 100px
+      left 50px
+      padding 0
+      padding 0 24px
 
     .mega
       margin-top 0

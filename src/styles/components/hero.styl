@@ -1,0 +1,38 @@
+.hero
+  position relative
+  margin 0 auto 42px
+  height 55vw
+
+  &:before
+    content ''
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background-color alpha(#000,0.25)
+    z-index 1
+
+  +break(desktop)
+    height 500px
+    margin 0 auto 60px
+
+  &__content
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    width 100%
+    z-index: 1;
+
+    h1
+      font-size 40px
+      font-weight bold
+      letter-spacing: 2px;
+      line-height 50px
+      text-align center
+
+  img
+    width 100%
+    height 100%
+    object-fit cover

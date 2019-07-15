@@ -1,0 +1,41 @@
+.image-text-row
+  align-items center
+  justify-content space-between
+  margin-bottom 84px
+
+  +break(desktop)
+    display flex
+    margin-bottom 204px
+    &__text
+      width calc(40% - 60px)
+      padding-right 24px
+      p
+        text-align justify
+  
+  &__text
+    padding 0 24px
+
+  img
+    margin-bottom 36px
+    +break(desktop)
+      width 60%
+      margin: 0;
+  
+  &--image_right
+    +break(desktop)
+      img
+        order 2
+
+      .image-text-row__text
+        padding-left 24px
+        padding-right 0
+
+  a.row-link
+    display inline-block
+    color: $colors.light_green
+    font-weight bold
+    letter-spacing 1px
+    text-decoration none
+    margin-top 24px
+    border-bottom: 2px solid $colors.light_green
+

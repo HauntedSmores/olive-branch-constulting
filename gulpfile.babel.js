@@ -17,33 +17,41 @@ function clear(cb) {
   })
 }
 
+function init_bsync(cb) {
+  browser_sync.init({
+    proxy: "olive-branch-consulting.test"
+  })
+  cb()
+}
+
+function reload(cb) {
+  browser_sync.reload()
+  cb()
+}
+
 const entryFiles = path.join(__dirname, './src/scripts/main.js')
 
-function watch_bundle(cb) {
-  let bundler = new parcel(entryFiles)
-
-  bundler.on('buildEnd', () => {
-    browser_sync.reload()
-  })
-
-  bundler.bundle().then(() => {
-    browser_sync.init({
-      proxy: "olive-branch-consulting.test",
-      files: '*.php'
-    })
-    cb()
-  })
-}
-
 function bundle(cb) {
-  let bundler = new parcel(entryFiles)
-
+  const bundler = new parcel(entryFiles)
   bundler.bundle().then(() => {
     cb()
   })
 }
 
-const defaultTask = series(clear, watch_bundle)
+function watch_bundle(cb) {
+  const bundler = new parcel(entryFiles)
+  bundler.on('buildEnd', browser_sync.reload)
+  bundler.bundle().then(() => {
+    cb()
+  })
+}
+
+function watch_php(cb) {
+  watch('./**/*.php', reload)
+  cb()
+}
+
+const defaultTask = series(clear, watch_bundle, watch_php, init_bsync)
 
 const build = series(clear, set_env, bundle)
 

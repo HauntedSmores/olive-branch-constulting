@@ -33,6 +33,11 @@
     ]
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "@babel/preset-env": "^7.4.5",
+    "@glidejs/glide": "^3.3.0",
+    "feather-icons": "^4.22.1",
+    "normalize.css": "^8.0.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }

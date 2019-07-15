@@ -1,11 +1,11 @@
 {
-    "key": "group_5cb125775b0eb",
-    "title": "Hero",
+    "key": "group_5ce76c846c663",
+    "title": "Slider",
     "fields": [
         {
-            "key": "field_5cdca2787afb2",
-            "label": "Enabled",
-            "name": "hero_enabled",
+            "key": "field_5cf2b90fa7beb",
+            "label": "Controls",
+            "name": "controls",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -22,35 +22,50 @@
             "ui_off_text": "Disabled"
         },
         {
-            "key": "field_5cdca1d47afb0",
-            "label": "",
-            "name": "hero",
-            "type": "group",
+            "key": "field_5cf2b929a7bed",
+            "label": "Bullets",
+            "name": "bullets",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5cdca2787afb2",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Enabled",
+            "ui_off_text": "Disabled"
+        },
+        {
+            "key": "field_5ce76c8875b1c",
+            "label": "Slider",
+            "name": "slider",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add Slide",
             "sub_fields": [
                 {
-                    "key": "field_5cdcafd3df0dc",
+                    "key": "field_5ce76c9b75b1d",
                     "label": "Image",
                     "name": "image",
                     "type": "image",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -69,9 +84,9 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_5cdcb014df0dd",
-                    "label": "Title",
-                    "name": "title",
+                    "key": "field_5ce76cb375b1e",
+                    "label": "Headline",
+                    "name": "headline",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -88,10 +103,10 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_5cdcb01bdf0de",
-                    "label": "Tagline",
-                    "name": "tagline",
-                    "type": "textarea",
+                    "key": "field_5ce76cc675b1f",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -102,24 +117,9 @@
                     },
                     "default_value": "",
                     "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": ""
-                },
-                {
-                    "key": "field_5cdcb07edf0df",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array"
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -129,17 +129,17 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "page"
+                "value": "post"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "acf_after_title",
+    "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": 0,
     "description": "",
-    "modified": 1557968679
+    "modified": 1559411049
 }

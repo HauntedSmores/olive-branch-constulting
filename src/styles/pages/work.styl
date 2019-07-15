@@ -1,0 +1,84 @@
+.portfolio
+  container()
+  +break(desktop)
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
+
+.portfolio-card
+  position relative
+  height 56vw
+  cursor pointer
+  overflow hidden
+
+  &:hover
+    img
+      transform scale(1.1)
+
+    .portfolio-card__title
+      background-color transparent
+
+  +break(desktop)
+    height 33vw
+
+  img
+    width 100%
+    height 100%
+    object-fit cover
+    backface-visibility hidden
+    transition transform 300ms
+
+  &__title
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    margin 0
+    background-color: rgba(0,0,0,0.4)
+    display flex
+    align-items center
+    justify-content center
+    transition background-color 300ms
+
+.portfolio-modal
+  display none
+  position fixed
+  width 100%
+  height 100%
+  top 0
+  left 0
+  z-index 1
+
+  &.active
+    display block
+
+.portfolio-details
+  display none
+  position absolute
+  width 100%
+  height 100%
+  overflow-y auto
+  padding 24px
+  background-color: $colors.light_grey
+
+  +break(desktop)
+    width 60%
+    height 50vw
+    max-height 600px
+    top 40%
+    left 50%
+    transform translate(-50%,-50%)
+
+  &.active
+    display block
+
+  .feather-x {
+    position absolute
+    top 24px
+    right 24px
+    color black
+    cursor pointer
+  }
+
+  h3
+    margin-top 0

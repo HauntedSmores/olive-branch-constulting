@@ -15,7 +15,15 @@ function nav() {
     }
   }
 
-  window.addEventListener('scroll', throttle(scroll_check, 200))
+  window.addEventListener('scroll', throttle(scroll_check, 100))
+  scroll_check()
+
+  //
+  const menu_btn = header.querySelector('.nav-menu-btn')
+
+  menu_btn.addEventListener('click', () => {
+    header.classList.toggle('ob-header--open')
+  })
 }
 
 export default nav
